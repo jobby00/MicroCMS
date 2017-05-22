@@ -1,5 +1,5 @@
 vendor/*
-log/*
+logs/*
 db/*
 composer.json
 composer.lock
