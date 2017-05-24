@@ -12,7 +12,12 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app->register(new Silex\Provider\AssetServiceProvider(), array(
     'assets.version' => 'v1'
 ));
-// Register services.
+// Register services
 $app['dao.article'] = function ($app) {
     return new MicroCMS\DAO\ArticleDAO($app['db']);
+};
+$app['dao.comment'] = function ($app) {
+    $commentDAO = new MicroCMS\DAO\CommentDAO($app['db']);
+    $commentDAO->setArticleDAO($app['dao.article']);
+    return $commentDAO;
 };
