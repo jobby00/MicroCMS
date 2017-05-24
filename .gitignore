@@ -1,7 +1,6 @@
 vendor/*
 logs/*
 db/*
-composer.json
 composer.lock
 error.log
 access.log
